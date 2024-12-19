@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:todo_app/todo.dart';
+import 'package:todo_app/todo_item_widget.dart';
 
 List<Todo> todoList = [
   Todo.create('Tarefa 1'),
@@ -19,7 +20,7 @@ class TodoListWidget extends StatelessWidget {
       shrinkWrap: true,
       itemCount: todoList.length,
       itemBuilder: (context, index) {
-        return ListTile(title: Text(todoList[index].task));
+        return TodoItemWidget(todo: todoList[index]);
       },
     );
   }
