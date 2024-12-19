@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:todo_app/todo_list_widget.dart';
 
 class TodoListPage extends StatefulWidget {
   const TodoListPage({super.key});
@@ -15,16 +16,12 @@ class _TodoListPageState extends State<TodoListPage> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: const Text('Lista de Tarefas'),
       ),
-      body: const Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'Tarefa 1',
-            ),
-          ],
-        ),
-      ),
+      body: ListView(
+        children: [
+          //TODO: new task widget
+          TodoListWidget(),
+        ],
+      )
     );
   }
 }
