@@ -1,20 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:todo_app/todo.dart';
+
+List<Todo> todoList = [
+  Todo.create('Tarefa 1'),
+  Todo.create('Tarefa 2'),
+  Todo.create('Tarefa 3'),
+  Todo.create('Tarefa 4'),
+  Todo.create('Tarefa 5'),
+];
 
 class TodoListWidget extends StatelessWidget {
   const TodoListWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return ListView(
+    return ListView.builder(
       primary: false,
       shrinkWrap: true,
-      children: [
-        ListTile(
-          title: Text(
-            'Tarefa 1',
-          ),
-        )
-      ],
+      itemCount: todoList.length,
+      itemBuilder: (context, index) {
+        return ListTile(title: Text(todoList[index].task));
+      },
     );
   }
 }
